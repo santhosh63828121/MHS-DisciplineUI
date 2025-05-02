@@ -1,0 +1,261 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+}
+
+/* Main container styling */
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 16px;
+  color: #555;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Button styling */
+button {
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Student details display */
+.student-details {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.student-details p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.student-details strong {
+  color: #333;
+}
+
+/* Style for empty student details */
+.no-details {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 18px;
+  font-weight: bold;
+}
+.indiscipline-history {
+  margin-top: 15px;
+  
+}
+
+.indiscipline-history h4 {
+  font-size: 18px;
+  color: #2d3436;
+  margin-bottom: 12px;
+}
+
+/* Grid system for the list */
+.indiscipline-history ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Max 4 columns */
+  gap: 15px; /* Space between grid items */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.indiscipline-history li {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.indiscipline-history li strong {
+  font-weight: bold;
+}
+/* ================================
+   Media Queries for Responsiveness
+==================================*/
+
+/* Mobile devices (≤ 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  label, input, button, .student-details p {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  label, input, button, .student-details p {
+    font-size: 15px;
+  }
+
+  button {
+    padding: 11px;
+  }
+}
+
+/* Small laptops (769px to 1024px) */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 23px;
+  }
+
+  label, input, button, .student-details p {
+    font-size: 16px;
+  }
+}
+
+/* Container for Indiscipline History */
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+  .indiscipline-history ul {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .indiscipline-history ul {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .indiscipline-history ul {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Apply animation to each list item */
+.indiscipline-history li {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  opacity: 0; /* Start invisible */
+  animation: fadeIn 0.5s ease-out forwards; /* Apply animation */
+  animation-delay: calc(0.2s * var(--i)); /* Staggered delay for each item */
+}
+
+/* Keyframes for touch effect */
+@keyframes touchEffect {
+  0% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.1); /* Slightly larger */
+  }
+  100% {
+    transform: scale(1); /* Back to normal size */
+  }
+}
+
+/* Apply animation on touch or click */
+.indiscipline-history li {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indiscipline-history li:active {
+  animation: touchEffect 0.3s ease;
+}
+

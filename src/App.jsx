@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css'
 
-import Del from './Component/Deletestd/delete'
-import Download from './Component/Download'
+import Del from './Component/Deletestd/delete';
+import Download from './Component/Download';
+import Upload from './Component/Upload/Upload'
 import Home from './Component/Home'; // Assuming Home component is in the same directory
 import Add from './Component/AddStd/Addstudent'; // Assuming About component is in the same directory
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/add" element={<Add />} />
           <Route path="/delete" element={<Del/>}/>
           <Route path="/download" element={<Download/>}/>
+          <Route path="/upload" element={<Upload/>}/>
         </Routes>
       </div>
     </Router>
